@@ -1,4 +1,5 @@
 import types from "./types";
+
 let init_state = {
     myData:[
         {id:1,
@@ -12,31 +13,40 @@ let init_state = {
          data:'second data',
           quantity:0
         }
-    ]
+    ],
+    number: 1
 }
-let arr=init_state.myData
 
 export function counterReducer(state = init_state, action) {
- 
     console.log("data in reducer",action.payload)
     switch (action.type) {
-        case types.INCREMENT: {
+        case types.INCREMENT: { 
+            
             let data = action.payload.quantity
-            console.log("array",state.myData)
-            // let index=state.myData.findIndex(target => target.id !== action.payload.id)
+            let mainArr=[...state.myData]
+            console.log("data in the increment function",mainArr)
+            let index=mainArr.findIndex(target => target.id == action.payload.id)
+            console.log("index of the target data in increment function", index)
             const newArr=[...state.myData];
             console.log("data in new array",newArr)
-            newArr[index].quantity=data+1
-            return {...state,myData:newArr }
+           if(index>=0)
+            { newArr[index].quantity=data+1}
+        
+            return{ ...state,myData:newArr, number: 1 }
         }
         case types.DECREMENT: {
             let data = action.payload.quantity
-            // let index=state.myData.findIndex(target => myData.id !== action.payload.id)
+            let mainArr=[...state.myData]
+            console.log("data in the decrement function",mainArr)
+            let index=mainArr.findIndex(target => target.id === action.payload.id)
+            console.log("index of the target data in decrement function", index)
             const newArr=[...state.myData];
-            newArr[index].quantity=data-1
+           if(index>=0)
+            { newArr[index].quantity=data-1}
+            
             return {...state,myData:newArr }
         }
         default:
-            return {state}
+            return {...state}
     }
 }

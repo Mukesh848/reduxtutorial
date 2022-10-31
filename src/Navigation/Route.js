@@ -6,14 +6,14 @@ import Navigationstrings from './Navigationstrings';
 import Home from '../Screens/Home';
 import Details from "../Screens/Details"
 
+const Stack = createNativeStackNavigator()
 
 const Routes =()=>{
-    const Stack = createNativeStackNavigator()
     return(
         <NavigationContainer>
             <Stack.Navigator>
-                <Stack.Screen name={Navigationstrings.HOME} component={Home}></Stack.Screen>
-                <Stack.Screen name={Navigationstrings.DETAILS} component={Details}></Stack.Screen>
+                <Stack.Screen name={Navigationstrings.HOME} component={Home}/>
+                <Stack.Screen name={Navigationstrings.DETAILS} component={Details}/>
             </Stack.Navigator>
         </NavigationContainer>
     )
