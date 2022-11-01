@@ -56,7 +56,7 @@ const Home = ({ navigation, route }) => {
                 data={storeData}
                 renderItem={renderItemfunc}
             />
-            <View style={{flex:1 , position:'absolute' , bottom:20 , borderRadius:15 , right:20}}><Text style={{fontSize:20}}>Data on screen :{arrlen}</Text></View>
+            <View style={{flex:1 , position:'absolute' , bottom:20  , right:20}}><Text style={{fontSize:20}}>Data on screen :{arrlen}</Text></View>
         </View>
     )
 }

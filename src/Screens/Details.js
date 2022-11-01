@@ -23,7 +23,7 @@ export default function Details({ navigation, route }) {
     <View style={Styles.detailscreenview}>
       <Text>{details.title}</Text>
       <Text>{details.Data}</Text>
-      {true ? <View style={Styles.bview}>
+      {targetval.quantity>=1 ? <View style={Styles.bview}>
         <TouchableOpacity style={Styles.bstyle}
           onPress={() => onDec(targetval)} >
           <Text style={Styles.btnText}>-</Text>
