@@ -12,9 +12,14 @@ let init_state = {
         Title:'HI ',
          data:'second data',
           quantity:0
-        }
-    ],
-    number: 1
+        },
+        {
+            id:3,
+            Title:'HI ',
+             data:'third data',
+              quantity:0
+            }
+    ]
 }
 
 export function counterReducer(state = init_state, action) {
@@ -27,12 +32,10 @@ export function counterReducer(state = init_state, action) {
             console.log("data in the increment function",mainArr)
             let index=mainArr.findIndex(target => target.id == action.payload.id)
             console.log("index of the target data in increment function", index)
-            const newArr=[...state.myData];
-            console.log("data in new array",newArr)
+           
            if(index>=0)
-            { newArr[index].quantity=data+1}
-        
-            return{ ...state,myData:newArr, number: 1 }
+            { mainArr[index].quantity=data+1}
+            return{ ...state,myData:mainArr }
         }
         case types.DECREMENT: {
             let data = action.payload.quantity
@@ -40,11 +43,9 @@ export function counterReducer(state = init_state, action) {
             console.log("data in the decrement function",mainArr)
             let index=mainArr.findIndex(target => target.id === action.payload.id)
             console.log("index of the target data in decrement function", index)
-            const newArr=[...state.myData];
            if(index>=0)
-            { newArr[index].quantity=data-1}
-            
-            return {...state,myData:newArr }
+            { mainArr[index].quantity=data-1}
+            return {...state,myData:mainArr }
         }
         default:
             return {...state}

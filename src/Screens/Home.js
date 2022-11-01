@@ -6,6 +6,7 @@ import { decrement, increment } from "../redux/action";
 import store from "../redux/store";
 import { useSelector } from "react-redux";
 
+
 const Home = ({ navigation, route }) => {
 
     const storeData = useSelector(state => state.myData)
@@ -19,10 +20,10 @@ const Home = ({ navigation, route }) => {
 
     const renderItemfunc = ({ item, index }) => {
         return (
-            <TouchableOpacity onPress={() => { navigation.navigate(Navigationstrings.DETAILS) }} style={Styles.flatstyle}>
+            <TouchableOpacity onPress={() => { navigation.navigate(Navigationstrings.DETAILS , {id:item.id ,title:item.Title,Data:item.data , quantity:item.quantity})}} style={Styles.flatstyle}>
                 <Text>Title :{item?.Title}</Text>
                 <Text>Data:{item.data}</Text>
-                {true ? <View style={Styles.bview}>
+                {item.quantity >=1? <View style={Styles.bview}>
                     <TouchableOpacity style={Styles.bstyle}
                         onPress={() => onDec(item)} >
                         <Text style={Styles.btnText}>-</Text>
@@ -33,8 +34,8 @@ const Home = ({ navigation, route }) => {
                     </TouchableOpacity>
                 </View>
                     : <View style={Styles.additembtnview}>
-                        <TouchableOpacity style={Styles.additembtn}>
-                            <Text style={Styles.btnText}>Add item</Text>
+                        <TouchableOpacity style={Styles.additembtn} onPress={()=> onInc(item)}>
+                            <Text style={Styles.btnText}>Add</Text>
                         </TouchableOpacity>
                     </View>}
             </TouchableOpacity>
@@ -42,11 +43,11 @@ const Home = ({ navigation, route }) => {
     }
 
     return (
-        <View  style={{ flex: 1 }}>
+        <View  style={{ flex: 1 , backgroundColor:'#DCDCDC' }}>
             <FlatList
                 data={storeData}
                 renderItem={renderItemfunc}
-                extraData={storeData}
+                // extraData={storeData}
             />
         </View>
     )

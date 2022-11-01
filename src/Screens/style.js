@@ -7,7 +7,7 @@ export const Styles = StyleSheet.create(
     main: {
       flex: 1,
       alignItems: 'center',
-      justifyContent: 'center'
+      justifyContent: 'center',
     }
     ,
     detailscreenview:
@@ -32,18 +32,18 @@ export const Styles = StyleSheet.create(
     },
     btnText:
       {color:colorpath.WHITE,
-        fontSize:15
+        fontSize:13
       }
     ,
     flatstyle:
     {
       marginTop: 16,
-      backgroundColor:colorpath.GREY,
+      backgroundColor:colorpath.WHITE,
       height: 100,
       marginHorizontal: 16,
       borderRadius: 16,
       justifyContent: 'center',
-      paddingLeft: 14
+      paddingLeft: 14,
     },
     bview:
     {
