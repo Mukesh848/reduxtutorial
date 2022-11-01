@@ -10,7 +10,15 @@ import { useSelector } from "react-redux";
 const Home = ({ navigation, route }) => {
 
     const storeData = useSelector(state => state.myData)
-
+    let arrlen=0
+    for(let i=0 ; i<storeData.length;i++){
+        if(storeData[i].quantity>0)
+        {
+            arrlen=arrlen+1
+        }
+        else 
+            continue
+    }
     const onInc = (item) => {
         store.dispatch(increment(item.quantity, item.id))
     }
@@ -20,7 +28,7 @@ const Home = ({ navigation, route }) => {
 
     const renderItemfunc = ({ item, index }) => {
         return (
-            <TouchableOpacity onPress={() => { navigation.navigate(Navigationstrings.DETAILS , {id:item.id ,title:item.Title,Data:item.data , quantity:item.quantity})}} style={Styles.flatstyle}>
+            <TouchableOpacity onPress={() => { navigation.navigate(Navigationstrings.DETAILS , {id:item.id ,title:item.Title,Data:item.data })}} style={Styles.flatstyle}>
                 <Text>Title :{item?.Title}</Text>
                 <Text>Data:{item.data}</Text>
                 {item.quantity >=1? <View style={Styles.bview}>
@@ -47,8 +55,8 @@ const Home = ({ navigation, route }) => {
             <FlatList
                 data={storeData}
                 renderItem={renderItemfunc}
-                // extraData={storeData}
             />
+            <View style={{flex:1 , position:'absolute' , bottom:20 , borderRadius:15 , right:20}}><Text style={{fontSize:20}}>Data on screen :{arrlen}</Text></View>
         </View>
     )
 }
