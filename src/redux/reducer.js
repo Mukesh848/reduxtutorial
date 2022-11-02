@@ -57,7 +57,7 @@ export function counterReducer(state = init_state, action) {
             return { ...state, myData: mainArr }
         }
         case types.DEFAULTDATA: {
-            let data=action.payload.payload
+            let data=action.payload
             console.log('data in reducer ==========',data)
             return { ...state, myData: data}
         }

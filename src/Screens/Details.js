@@ -17,7 +17,6 @@ export default function Details({ navigation, route }) {
     store.dispatch(decrement(targetval.quantity, targetval.id))
   }
 
-
   return (
     <View style={Styles.detailscreenview}>
       <Text>{details.title}</Text>

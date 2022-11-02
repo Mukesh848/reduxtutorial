@@ -35,13 +35,8 @@ function App() {
   const getData = async () => {
     try {
       const res = await AsyncStorage.getItem('userData')
-      console.log("my storage value", JSON.parse(res))
-
       if(!!res){
-        store.dispatch(defaultdata({
-          type: types.DEFAULTDATA,
-          payload: JSON.parse(res)
-        }))
+        store.dispatch(defaultdata(JSON.parse(res)))
       }
     } catch (error) {
       console.log("error rasied", error)
