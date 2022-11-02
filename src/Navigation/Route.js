@@ -1,7 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator ,BlurView} from '@react-navigation/native-stack';
 import React from 'react';
-import { StyleSheet } from 'react-native';
 import Navigationstrings from './Navigationstrings';
 import Home from '../Screens/Home';
 import Details from "../Screens/Details"

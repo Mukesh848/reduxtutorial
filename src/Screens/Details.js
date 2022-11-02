@@ -10,7 +10,6 @@ export default function Details({ navigation, route }) {
   const storeData = useSelector(state => state.myData)
   let index = storeData.findIndex(target => target.id == details.id)
   let targetval = storeData[index]
-
   const onInc = (targetval) => {
     store.dispatch(increment(targetval.quantity, targetval.id))
   }

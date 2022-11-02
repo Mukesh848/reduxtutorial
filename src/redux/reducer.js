@@ -59,17 +59,7 @@ export function counterReducer(state = init_state, action) {
         case types.DEFAULTDATA: {
             let data=action.payload.payload
             console.log('data in reducer ==========',data)
-            let mainArr = [...state.myData]
-            // for( let i; i<mainArr.length ; i++){
-                // mainArr[i].quantity=data[i].quantity
-                // console.log("**********",hello)
-            // }
-            mainArr[0].quantity=data[0].quantity
-                mainArr[1].quantity=data[1].quantity
-                mainArr[2].quantity=data[2].quantity
-            console.log("data after modification",mainArr)
-            storeData(mainArr)
-            return { ...state, myData: mainArr }
+            return { ...state, myData: data}
         }
         default:
             return { ...state }
