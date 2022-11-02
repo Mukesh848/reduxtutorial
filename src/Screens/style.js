@@ -11,34 +11,35 @@ export const Styles = StyleSheet.create(
     }
     ,
     detailscreenview:
-      {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginHorizontal:16,
-        marginVertical:16,
-        backgroundColor:colorpath.GREY,
-        borderRadius:16
-      }
+    {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginHorizontal: 16,
+      marginVertical: 16,
+      backgroundColor: colorpath.SKY_BLUE,
+      borderRadius: 16
+    }
     ,
     bstyle:
     {
       marginLeft: 10,
-      backgroundColor:colorpath.BLACK,
+      backgroundColor: colorpath.WHITE,
       borderRadius: 16,
       width: 20,
       alignItems: 'center',
-      justifyContent:'center'
+      justifyContent: 'center'
     },
     btnText:
-      {color:colorpath.WHITE,
-        fontSize:13
-      }
+    {
+      color: colorpath.BLACK,
+      fontSize: 13
+    }
     ,
     flatstyle:
     {
       marginTop: 16,
-      backgroundColor:colorpath.WHITE,
+      backgroundColor: colorpath.SKY_BLUE,
       height: 100,
       marginHorizontal: 16,
       borderRadius: 16,
@@ -63,10 +64,15 @@ export const Styles = StyleSheet.create(
     ,
     additembtn: {
       marginLeft: 10,
-      backgroundColor: colorpath.BLACK,
+      backgroundColor: colorpath.WHITE,
       borderRadius: 16,
       alignItems: 'center',
-      padding:4,
-    }
+      padding: 4,
+    },
+    itemcount: { flex: 1,
+       position: 'absolute', 
+       bottom: 20,
+        right: 20 
+      }
   }
 ) 
