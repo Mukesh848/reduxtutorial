@@ -1,7 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import store from "./store";
 import types from "./types";
-
 
 export const storeData = async (mainArr) => {
     try {
@@ -36,11 +34,9 @@ let init_state = {
     ]
 }
 
-export function counterReducer(state = init_state, action) {
-   
+export function counterReducer(state = init_state, action) {   
     switch (action.type) {
         case types.INCREMENT: {
-
             let data = action.payload.quantity
             let mainArr = [...state.myData]
             let index = mainArr.findIndex(target => target.id == action.payload.id)

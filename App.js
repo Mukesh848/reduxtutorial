@@ -1,36 +1,14 @@
 import React, { useEffect } from "react";
-import { Provider, useSelector } from "react-redux";
+import { Provider} from "react-redux";
 import Routes from "./src/Navigation/Route";
 import store from "./src/redux/store";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { defaultdata } from "./src/redux/action";
-import types from "./src/redux/types";
-import {storeData} from "./src/redux/reducer"
-
 
 function App() {
-  // const dataGlobal= useSelector(state => state.myData)
-  // console.log("data from global array in App component ",dataGlobal)
-
   useEffect(() => {
-    // AsyncStorage.removeItem('userData')
-    // alert("i am from App screen")
     getData()
   }, [])
-
-
-  // const storeData = async (value) => {
-  //   try {
-  //     let myArray = [{ name: 'Blablabla bla' }, { name: "kdlkfjdkslfjkdkf" }]
-
-
-  //     await AsyncStorage.setItem('userData', JSON.stringify(myArray))
-  //     console.log("item saved succssfully.....")
-  //   } catch (e) {
-     
-  //     console.log("error raised during saved item")
-  //   }
-  // }
 
   const getData = async () => {
     try {
@@ -43,7 +21,6 @@ function App() {
     }
   }
 
-
   return (
     <Provider store={store}>
       <Routes />
@@ -51,6 +28,5 @@ function App() {
     </Provider>
   )
 }
-
 
 export default App

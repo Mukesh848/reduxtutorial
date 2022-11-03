@@ -1,5 +1,5 @@
 import { View, Text, TouchableOpacity } from 'react-native'
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Styles } from './style'
 import { useSelector } from 'react-redux'
 import store from '../redux/store'
@@ -36,7 +36,6 @@ export default function Details({ navigation, route }) {
             <Text style={Styles.btnText}>Add</Text>
           </TouchableOpacity>
         </View>}
-
     </View>
   )
 }

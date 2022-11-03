@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import { Styles } from "./style";
 import Navigationstrings from "../Navigation/Navigationstrings";
@@ -7,10 +6,7 @@ import store from "../redux/store";
 import { useSelector } from "react-redux";
 import colorpath from "../constants/colorpath";
 
-
-
 const Home = ({ navigation, route }) => {
-
     const storeData = useSelector(state => state.myData)
     let arrlen = 0
     for (let i = 0; i < storeData.length; i++) {
@@ -26,7 +22,6 @@ const Home = ({ navigation, route }) => {
     const onDec = (item) => {
         store.dispatch(decrement(item.quantity, item.id))
     }
-
     const renderItemfunc = ({ item, index }) => {
         return (
             <TouchableOpacity 
@@ -52,7 +47,6 @@ const Home = ({ navigation, route }) => {
             </TouchableOpacity>
         )
     }
-
     return (
         <View style={{ flex: 1, backgroundColor:colorpath.WHITE }}>
             <FlatList

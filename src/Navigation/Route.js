@@ -5,8 +5,7 @@ import Navigationstrings from './Navigationstrings';
 import Home from '../Screens/Home';
 import Details from "../Screens/Details"
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Tabroutes from './Tabroutes';
-const Stack = createNativeStackNavigator()
+
 const Tab= createBottomTabNavigator()
 const Routes =()=>{
     return(
